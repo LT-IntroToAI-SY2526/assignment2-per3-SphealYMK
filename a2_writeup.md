@@ -12,9 +12,9 @@ This assignment is about learning and applying the while loop and iterating thro
 
 ## Reflection Questions
 1. What was difficult for you while completing the match function?
-
+I think it was weird and complicated, but in the end i got through it.
 
 
 2. Explain how you could use the match function for extracting information from a movie database.
-
+Find which movies are in which genres, if they are classics or not, and lengths of the movies.
 
