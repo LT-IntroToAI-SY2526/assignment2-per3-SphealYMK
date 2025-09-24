@@ -21,14 +21,9 @@ def match(pattern: List[str], source: List[str]) -> List[str]:
     # pind is still a valid index OR sind is still a valid index (valid index means that
     # the index is != to the length of the list)
     while pind < len(pattern) or sind < len(source):
-        # your job is to fill out the body of this loop
-
-        # you should delete the following line
-
-        # 1) if we reached the end of the pattern but not source
-        if pind == len(pattern) and sind < len(source):
-            print("end of pattern, but not source")
+       if pind == len(pattern) and sind < len(source):
             return None
+
         # 2) if the current thing in the pattern is a %
         # WARNING: this condition contains the bulk of the code for the assignment
         # If you get stuck on this one, we encourage you to attempt the other conditions
@@ -40,8 +35,12 @@ def match(pattern: List[str], source: List[str]) -> List[str]:
                 print(result)
                 return result
             else:
-                # more things here - not at end
-                pass # This is a placeholder 
+                for split in range(sind, len(source) + 1):
+                    combined = " ".join(source[sind:split])
+                    rest = helper(pind + 1, split)
+                    if rest is not None:
+                        return result + [combined] + rest
+                return None
 
         # 3) if we reached the end of the source but not the pattern
         elif sind == len(source):
